@@ -1,0 +1,17 @@
+---
+machine:
+  python:
+    version: 2.7
+
+dependencies:
+  pre:
+    - |
+      virtualenv .venv
+      source .venv/bin/activate
+      pip install lamvery
+
+test:
+  override:
+    - |
+      source .venv/bin/activate
+      lamvery invoke {}
